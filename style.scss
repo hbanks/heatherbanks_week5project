@@ -1,0 +1,215 @@
+@import 'normalize';
+
+$svgcolour: rgba(167,227,193,1);
+$textcolour: rgb(105,105,105);
+$headerFont: 'Raleway', sans-serif;
+$bodyFont: 'Playfair Display', serif;
+
+body,h1,h2,p,a,footer {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: $textcolour;
+}
+
+h1,h2,h3 {
+	font-family: $headerFont;
+}
+
+p,a {
+	font-family: $bodyFont;
+	font-size: 14px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	width: 100%;
+	color: darken($svgcolour,20%);
+	&:hover {
+		color: $svgcolour;
+	}
+}
+
+i {
+	margin-right: 5px;
+	color: $textcolour;
+}
+
+
+
+.innerWrapper {
+	width: 80%;
+	max-width: 1000px;
+	margin:0 auto;
+}
+
+//===============
+// header section
+//===============
+header {
+	text-align: center;
+	margin: 50px 0;
+	h1 {
+		padding: 10px 0;
+		font-size: 50px;
+	}
+}
+
+//====================
+// setLocation section
+//====================
+
+.setLocation {
+	text-align: center;
+	padding: 20px;
+}
+
+form {
+	input {
+		font-size: 14px;
+		border: none;
+		padding: 12px;
+	}
+	input.place {
+		border: 1px solid $svgcolour;
+		margin-right: 15px;
+		width: 35%;
+	}
+	input[type=submit] {
+		background: $svgcolour;
+		color: white;
+		border: 1px solid $svgcolour;
+		&:hover {
+			background: darken($svgcolour,15%);
+		}
+	}
+}
+
+.locationSuccess {
+	padding-top: 30px;
+}
+
+.locationSpan {
+	color: $svgcolour;
+}
+//====================
+// pastryIcons section
+//====================
+
+.pastryIcons {
+	text-align: center;
+	margin: 0 auto;
+	padding: 30px 0;
+	p {
+		padding: 10px 0;
+	}
+	.pastryIcon {
+		float: left;
+		margin: 0 auto;
+		width: 33.33%;
+	}
+}
+
+// this is to remove the outline on the focus state, still trying to make the hover stylings work on the SVG when focused
+
+// .pastryIcons a {
+// 	outline: 0;
+// }
+
+// a:active svg,a:focus svg {
+// 	fill: darken($svgcolour,15%);
+// 	stroke: darken($svgcolour,15%);
+// }
+
+svg {
+	width: 75%;
+	height: 75%;
+
+}
+
+svg path, svg line {
+	fill: $svgcolour;
+	stroke: $svgcolour;
+	&:hover {
+		fill: darken($svgcolour,15%);
+		stroke: darken($svgcolour,15%);
+	}
+}
+
+.vegan svg path {
+	stroke: $svgcolour;
+	fill: transparent;
+	&:hover {
+		stroke: darken($svgcolour,15%);
+	}
+}
+
+//=================
+// bakeries section
+//=================
+
+.bakeries {
+	clear: both;
+	margin: 0 auto;
+	padding: 20px 0;
+	margin: 35px 0;
+}
+
+.bakery {
+	width: 32%;
+	height: 515px;
+	float: left;
+	padding: 20px;
+	// border: 1px solid $svgcolour;
+	margin-bottom: 20px;
+	&:nth-child(3n+2) {
+		margin: 0 2%;
+	}
+	img {
+		max-width: 100%;
+		padding: 10px 0;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	a, p {
+		padding: 5px 0;
+	}
+}
+
+//==============
+//footer section
+//==============
+
+footer {
+	display: block;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	padding: 10px 0;
+
+}
+
+.createdBy {
+	font-size: 11px;
+	h3 {
+		margin: 0;
+		padding: 10px 0;
+	}
+	a {
+		display: inline;
+		font-family: $headerFont;
+	}
+}
+.props p {
+	font-size: 10px;
+}
+
+@import 'mq';
